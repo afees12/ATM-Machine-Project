@@ -1,0 +1,27 @@
+<!-- src/main/resources/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>ATM</h1>
+    <p>Balance: $<span th:text="${balance}"></span></p>
+
+    <form action="/deposit" method="post">
+        <input type="number" name="amount" placeholder="Amount to deposit">
+        <button type="submit">Deposit</button>
+    </form>
+
+    <form action="/withdraw" method="post">
+        <input type="number" name="amount" placeholder="Amount to withdraw">
+        <button type="submit">Withdraw</button>
+    </form>
+
+    <p th:if="${error}" th:text="${error}"></p>
+</body>
+</html>
+
